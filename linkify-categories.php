@@ -1,13 +1,18 @@
 <?php
+/**
+ * @package Linkify_Categories
+ * @author Scott Reilly
+ * @version 1.1
+ */
 /*
 Plugin Name: Linkify Categories
-Version: 1.0
+Version: 1.1
 Plugin URI: http://coffee2code.com/wp-plugins/linkify-categories
 Author: Scott Reilly
 Author URI: http://coffee2code.com
 Description: Turn a list of category IDs and/or slugs into a list of links to those categories.
 
-Compatible with WordPress 2.5+, 2.6+, 2.7+, 2.8+.
+Compatible with WordPress 2.8+, 2.9+.
 
 =>> Read the accompanying readme.txt file for more information.  Also, visit the plugin's homepage
 =>> for more information and the latest updates
@@ -15,7 +20,7 @@ Compatible with WordPress 2.5+, 2.6+, 2.7+, 2.8+.
 Installation:
 
 1. Download the file http://coffee2code.com/wp-plugins/linkify-categories.zip and unzip it into your 
-/wp-content/plugins/ directory.
+/wp-content/plugins/ directory (or install via the built-in WordPress plugin installer).
 2. Activate the plugin through the 'Plugins' admin menu in WordPress
 3. Use the linkify_categories() template tag in one of your templates (be sure to pass it at least the first argument
 	indicating what category IDs and/or slugs to linkify -- the argument can be an array, a space-separate list, or a
@@ -62,7 +67,7 @@ Displays:
 */
 
 /*
-Copyright (c) 2009 by Scott Reilly (aka coffee2code)
+Copyright (c) 2009-2010 by Scott Reilly (aka coffee2code)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation 
 files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, 
@@ -77,18 +82,18 @@ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRA
 IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-/*
-	Displays links to each of any number of categories specified via category IDs and/or slugs
-	Arguments:
-	 $categories: A single category ID/slug, or multiple category IDs/slugs defined via an array, or multiple category IDs/slugs
-					defined via a comma-separated and/or space-separated string
-	 $before 	: (optional) To appear before the entire category listing (if categories exist or if 'none' setting is specified)
-	 $after 	: (optional) To appear after the entire category listing (if categories exist or if 'none' setting is specified)
-	 $between	: (optional) To appear between all categories
-	 $before_last : (optional) To appear between the second-to-last and last element, if not specified, 'between' value is used	
-	 $none		: (optional) To appear when no categories have been found.  If blank, then the entire function doesn't display anything
+/**
+ * Displays links to each of any number of categories specified via category IDs and/or slugs
+ * 
+ * @param int|string|array $categories A single category ID/slug, or multiple category IDs/slugs defined via an array, or multiple category IDs/slugs defined via a comma-separated and/or space-separated string
+ * @param string $before (optional) Text to appear before the entire category listing (if categories exist or if 'none' setting is specified)
+ * @param string $after (optional) Text to appear after the entire category listing (if categories exist or if 'none' setting is specified)
+ * @param string $between (optional) Text to appear between all categories
+ * @param string $before_last (optional) Text to appear between the second-to-last and last element, if not specified, 'between' value is used	
+ * @param string $none (optional) Text to appear when no categories have been found.  If blank, then the entire function doesn't display anything
+ * @return none (Text is echoed; nothing is returned)
  */
-function linkify_categories($categories, $before = '', $after = '', $between = ', ', $before_last = '', $none = '') {
+function linkify_categories( $categories, $before = '', $after = '', $between = ', ', $before_last = '', $none = '' ) {
 	if ( empty($categories) )
 		$categories = array();
 	elseif ( !is_array($categories) )
@@ -104,7 +109,7 @@ function linkify_categories($categories, $before = '', $after = '', $between = '
 			}
 			$title = get_cat_name($id);
 			if ( $title )
-				$links[] = '<a href="' . get_category_link($id) . '">' . $title . '</a>';
+				$links[] = '<a href="' . get_category_link($id) . '" title="' . esc_attr(sprintf(__( "View all posts in %s"), $title)) . '">' . $title . '</a>';
 		}
 		if ( empty($before_last) ) $response = implode($links, $between);
 		else {
