@@ -3,9 +3,9 @@ Contributors: coffee2code
 Donate link: http://coffee2code.com/donate
 Tags: categories, link, linkify, archives, list, widget, template tag, coffee2code
 Requires at least: 2.8
-Tested up to: 3.1
-Stable tag: 2.0
-Version: 2.0
+Tested up to: 3.2
+Stable tag: 2.0.1
+Version: 2.0.1
 
 Turn a string, list, or array of category IDs and/or slugs into a list of links to those categories.
 
@@ -15,7 +15,7 @@ Turn a string, list, or array of category IDs and/or slugs into a list of links 
 
 The plugin provides a widget called "Linkify Catagories" as well as a template tag, `c2c_linkify_categories()`, to easily indicate categories to list and how to list them.  Categories are specified by either ID or slug.  See other parts of the documentation for example usage and capabilities.
 
-Links: [Plugin Homepage]:(http://coffee2code.com/wp-plugins/linkify-categories/) | [Author Homepage]:(http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/linkify-categories/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
@@ -143,6 +143,11 @@ Do:
 
 == Changelog ==
 
+= 2.0.1 =
+* Note compatibility through WP 3.2+
+* Minor code formatting changes (spacing)
+* Fix plugin homepage and author links in description in readme.txt
+
 = 2.0 =
 * Add Linkify Categories widget
 * Rename `linkify_categories()` to `c2c_linkify_categories()` (but maintain a deprecated version for backwards compatibility)
@@ -177,6 +182,9 @@ Do:
 
 
 == Upgrade Notice ==
+
+= 2.0.1 =
+Trivial update: noted compatibility through WP 3.2+ and minor code formatting changes (spacing)
 
 = 2.0 =
 Feature update: added widget, deprecated `linkify_categories()` in favor of `c2c_linkify_categories()`, renamed action from 'linkify_categories' to 'c2c_linkify_categories', added Template Tags, Screenshots, and FAQ sections to readme, noted compatibility with WP 3.1+, and updated copyright date (2011).

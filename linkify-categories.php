@@ -38,7 +38,7 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 require_once( dirname( __FILE__ ) . '/linkify-categories.widget.php' );
 
-if ( !function_exists( 'c2c_linkify_categories' ) ) :
+if ( ! function_exists( 'c2c_linkify_categories' ) ) :
 /**
  * Displays links to each of any number of categories specified via category IDs and/or slugs
  *
@@ -55,7 +55,7 @@ if ( !function_exists( 'c2c_linkify_categories' ) ) :
 function c2c_linkify_categories( $categories, $before = '', $after = '', $between = ', ', $before_last = '', $none = '' ) {
 	if ( empty( $categories ) )
 		$categories = array();
-	elseif ( !is_array( $categories ) )
+	elseif ( ! is_array( $categories ) )
 		$categories = explode( ',', str_replace( array( ', ', ' ', ',' ), ',', $categories ) );
 
 	if ( empty( $categories ) ) {
@@ -68,7 +68,7 @@ function c2c_linkify_categories( $categories, $before = '', $after = '', $betwee
 				if ( $cat )
 					$id = $cat->cat_ID;
 			}
-			if ( !$id )
+			if ( ! $id )
 				continue;
 			$title = get_cat_name( $id );
 			if ( $title )
@@ -104,7 +104,7 @@ function c2c_linkify_categories( $categories, $before = '', $after = '', $betwee
 add_action( 'c2c_linkify_categories', 'c2c_linkify_categories', 10, 6 );
 endif;
 
-if ( !function_exists( 'linkify_categories' ) ) :
+if ( ! function_exists( 'linkify_categories' ) ) :
 /**
  * Displays links to each of any number of categories specified via category IDs and/or slugs
  *
