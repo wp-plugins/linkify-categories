@@ -175,4 +175,3 @@ class c2c_LinkifyCategoriesWidget extends WP_Widget {
 add_action( 'widgets_init', create_function('', 'register_widget(\'c2c_LinkifyCategoriesWidget\');') );
 
 endif; // end if !class_exists()
-?>
