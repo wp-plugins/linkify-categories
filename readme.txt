@@ -1,30 +1,27 @@
 === Linkify Categories ===
 Contributors: coffee2code
-Donate link: http://coffee2code.com/donate
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6ARCFJ9TX3522
 Tags: categories, link, linkify, archives, list, widget, template tag, coffee2code
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
-Tested up to: 3.5
+Tested up to: 3.8
 Stable tag: 2.0.4
-Version: 2.0.4
 
 Turn a string, list, or array of category IDs and/or slugs into a list of links to those categories.
 
 == Description ==
 
-Turn a string, list, or array of category IDs and/or slugs into a list of links to those categories.
+The plugin provides a widget called "Linkify Catagories" as well as a template tag, `c2c_linkify_categories()`, which allow you to easily specify categories to list and how to list them. Categories are specified by either ID or slug. See other parts of the documentation for example usage and capabilities.
 
-The plugin provides a widget called "Linkify Catagories" as well as a template tag, `c2c_linkify_categories()`, to easily indicate categories to list and how to list them.  Categories are specified by either ID or slug.  See other parts of the documentation for example usage and capabilities.
-
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/linkify-categories/) | [Plugin Directory Page](http://wordpress.org/extend/plugins/linkify-categories/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/linkify-categories/) | [Plugin Directory Page](http://wordpress.org/plugins/linkify-categories/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
 
 1. Unzip `linkify-categories.zip` inside the `/wp-content/plugins/` directory for your site (or install via the built-in WordPress plugin installer)
 1. Activate the plugin through the 'Plugins' admin menu in WordPress
-1. Use the `c2c_linkify_categories()` template tag in one of your templates (be sure to pass it at least the first argument indicating what category IDs and/or slugs to linkify -- the argument can be an array, a space-separate list, or a comma-separated list).  Other optional arguments are available to customize the output.
+1. Use the `c2c_linkify_categories()` template tag in one of your templates (be sure to pass it at least the first argument indicating what category IDs and/or slugs to linkify -- the argument can be an array, a space-separate list, or a comma-separated list). Other optional arguments are available to customize the output.
 
 
 == Screenshots ==
@@ -45,6 +42,10 @@ Whether you use the template tag or the widget, specify the following informatio
 Before text: `<ul><li>` (or `<ol><li>`)
 After text: `</li></ul>` (or `</li></ol>`)
 Between categories: `</li><li>`
+
+= Does this plugin include unit tests? =
+
+Yes.
 
 
 == Template Tags ==
@@ -74,7 +75,7 @@ A single category ID/slug, or multiple category IDs/slugs defined via an array, 
 (optional) To appear between the second-to-last and last element, if not specified, 'between' value is used
 
 * `$none`
-(optional) To appear when no categories have been found.  If blank, then the entire function doesn't display anything
+(optional) To appear when no categories have been found. If blank, then the entire function doesn't display anything
 
 = Examples =
 
@@ -145,6 +146,16 @@ Do:
 
 == Changelog ==
 
+= 2.1 (2013-12-20) =
+* Validate category is either int or string before handling
+* Add unit tests
+* Minor code tweaks (spacing, bracing)
+* Minor documentation tweaks
+* Note compatibility through WP 3.8+
+* Update copyright date (2014)
+* Change donate link
+* Add banner
+
 = 2.0.4 =
 * Add check to prevent execution of code if file is directly accessed
 * Note compatibility through WP 3.5+
@@ -202,6 +213,9 @@ Do:
 
 
 == Upgrade Notice ==
+
+= 2.1 =
+Moderate update: better validate data received; added unit tests; noted compatibility through WP 3.8+
 
 = 2.0.4 =
 Trivial update: noted compatibility through WP 3.5+
