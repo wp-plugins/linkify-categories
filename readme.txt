@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
 Tested up to: 3.8
-Stable tag: 2.0.4
+Stable tag: 2.1
 
 Turn a string, list, or array of category IDs and/or slugs into a list of links to those categories.
 
