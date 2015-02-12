@@ -5,8 +5,8 @@ Tags: categories, link, linkify, archives, list, widget, template tag, coffee2co
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
-Tested up to: 4.0
-Stable tag: 2.1.1
+Tested up to: 4.1
+Stable tag: 2.1.2
 
 Turn a string, list, or array of category IDs and/or slugs into a list of links to those categories.
 
@@ -146,6 +146,10 @@ Do:
 
 == Changelog ==
 
+= 2.1.2 (2015-02-11) =
+* Note compatibility through WP 4.1+
+* Update copyright date (2015)
+
 = 2.1.1 (2014-08-26) =
 * Minor plugin header reformatting
 * Change documentation links to wp.org to be https
@@ -219,6 +223,9 @@ Do:
 
 
 == Upgrade Notice ==
+
+= 2.1.2 =
+Trivial update: noted compatibility through WP 4.1+ and updated copyright date
 
 = 2.1.1 =
 Trivial update: noted compatibility through WP 4.0+; added plugin icon.
