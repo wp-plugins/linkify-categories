@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Linkify Categories
- * Version:     2.1.2
+ * Version:     2.1.3
  * Plugin URI:  http://coffee2code.com/wp-plugins/linkify-categories/
  * Author:      Scott Reilly
  * Author URI:  http://coffee2code.com/
@@ -9,15 +9,15 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Description: Turn a list of category IDs and/or slugs into a list of links to those categories.
  *
- * Compatible with WordPress 2.8 through 4.1+.
+ * Compatible with WordPress 2.8 through 4.3+.
  *
  * =>> Read the accompanying readme.txt file for instructions and documentation.
  * =>> Also, visit the plugin's homepage for additional information and updates.
  * =>> Or visit: https://wordpress.org/plugins/linkify-categories/
  *
  * @package Linkify_Categories
- * @author Scott Reilly
- * @version 2.1.2
+ * @author  Scott Reilly
+ * @version 2.1.3
  */
 
 /*
@@ -48,13 +48,13 @@ if ( ! function_exists( 'c2c_linkify_categories' ) ) :
  *
  * @since 2.0
  *
- * @param int|string|array $categories A single category ID/slug, or multiple category IDs/slugs defined via an array, or multiple category IDs/slugs defined via a comma-separated and/or space-separated string
- * @param string $before (optional) Text to appear before the entire category listing (if categories exist or if 'none' setting is specified)
- * @param string $after (optional) Text to appear after the entire category listing (if categories exist or if 'none' setting is specified)
- * @param string $between (optional) Text to appear between all categories
- * @param string $before_last (optional) Text to appear between the second-to-last and last element, if not specified, 'between' value is used
- * @param string $none (optional) Text to appear when no categories have been found.  If blank, then the entire function doesn't display anything
- * @return none (Text is echoed; nothing is returned)
+ * @param int|string|array $categories  A single category ID/slug, or multiple category IDs/slugs defined via an array, or multiple category IDs/slugs defined
+ *                                      via a comma-separated and/or space-separated string
+ * @param string           $before      Optional. Text to appear before the entire category listing (if categories exist or if 'none' setting is specified).
+ * @param string           $after       Optional. Text to appear after the entire category listing (if categories exist or if 'none' setting is specified).
+ * @param string           $between     Optional. Text to appear between all categories.
+ * @param string           $before_last Optional. Text to appear between the second-to-last and last element, if not specified, 'between' value is used.
+ * @param string           $none        Optional. Text to appear when no categories have been found.  If blank, then the entire function doesn't display anything.
  */
 function c2c_linkify_categories( $categories, $before = '', $after = '', $between = ', ', $before_last = '', $none = '' ) {
 	if ( empty( $categories ) ) {
